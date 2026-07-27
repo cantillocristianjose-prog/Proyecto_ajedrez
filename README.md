@@ -1,3 +1,3 @@
 # Proyecto_ajedrez
 
-esto es un comentario
+en el siguiente mini proyecto hare un intento de hacer una aplicacion para el torneo de ajedrez
