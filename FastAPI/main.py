@@ -1,5 +1,10 @@
 from fastapi import FastAPI
+from Ruters import productos
+
 app = FastAPI()
+
+# Routers
+app.include_router(productos.router)
 
 @app.get("/")
 async def root():
