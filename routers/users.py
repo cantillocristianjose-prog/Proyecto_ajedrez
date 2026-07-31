@@ -14,7 +14,7 @@ users_list = [User(id=1, name="Cristian", surname="Gonzalez", email="cristian@ex
               User(id=2, name="Juan", surname="Perez", email="juan@example.com", age=34),
               User(id=3, name="María", surname="López", email="maria@example.com", age=28)]
 
-# Iniciar el servidor:  python -m uvicorn FastAPI.users:router --reload
+
 
 @router.get("/")
 async def users():
