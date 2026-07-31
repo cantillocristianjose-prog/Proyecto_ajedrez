@@ -1,6 +1,6 @@
-from fastapi import FastAPI,HTTPException  
+from fastapi import APIRouter,HTTPException  
 from pydantic import BaseModel
-app = FastAPI()
+router = APIRouter(prefix = "/users", tags = ["users"],responses = {404: {"message": "No encontrado"}})
 
 #Entidad de usuario (modelo)
 class User(BaseModel):
@@ -14,21 +14,18 @@ users_list = [User(id=1, name="Cristian", surname="Gonzalez", email="cristian@ex
               User(id=2, name="Juan", surname="Perez", email="juan@example.com", age=34),
               User(id=3, name="María", surname="López", email="maria@example.com", age=28)]
 
-# Iniciar el servidor:  python -m uvicorn FastAPI.users:app --reload
+# Iniciar el servidor:  python -m uvicorn FastAPI.users:router --reload
 
-@app.get("/users")
+@router.get("/")
 async def users():
     return users_list
 
-@app.get("/user/{id}", response_model=User)
+@router.get("/{id}", response_model=User)
 async def user(id: int):
     return search_user(id)
 
-@app.get("/user/", response_model=User)
-async def user(id: int):
-    return search_user(id)
 
-@app.post("/user/", response_model=User)
+@router.post("/",status_code=201, response_model=User)
 async def user(user: User):
     if type(search_user(user.id)) == User:
         raise HTTPException(status_code=304, detail="El usuario ya existe")
@@ -36,7 +33,7 @@ async def user(user: User):
         users_list.append(user)
         return user
 
-@app.put("/user/", response_model=User)
+@router.put("/", response_model=User)
 async def user(user: User):
 
     found = False
@@ -49,7 +46,7 @@ async def user(user: User):
     if not found:
         raise HTTPException(status_code=304, detail="El usuario no existe")
 
-@app.delete("/user/{id}",response_model=User)
+@router.delete("/{id}",response_model=User)
 async def user(id: int):
     found = False
     for index, saved_user in enumerate(users_list):
