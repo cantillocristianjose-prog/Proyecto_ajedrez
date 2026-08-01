@@ -1,7 +1,7 @@
 #Fast API es un framework web moderno y rápido para construir APIs con Python 3.6+ basado en las anotaciones de tipo estándar de Python.
 from fastapi import FastAPI
 #importar los routers
-from routers import product,users
+from routers import product,users,jwt_auth_users,basic_auth_users
 #importar recursos estaticos
 from fastapi.staticfiles import StaticFiles
 
@@ -10,10 +10,10 @@ app = FastAPI()
 # Routers la conexion de scrpipts de rutas a la app principal
 app.include_router(product.router)
 app.include_router(users.router)
+app.include_router(jwt_auth_users.router)
+app.include_router(basic_auth_users.router)
 #Recursos estaticos (imagenes, css, js)
-app.mount("/static"#aqui se pone la ruta en el que se va a ver los recursos estaticos
-          , StaticFiles(directory="static") # aqui se define el diccionario
-          , name="static") # el nombre que se va a dar
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
 async def root():
