@@ -1,7 +1,8 @@
 #Fast API es un framework web moderno y rápido para construir APIs con Python 3.6+ basado en las anotaciones de tipo estándar de Python.
+from FastAPI.routers import basic_auth_users, jwt_auth_users, product
 from fastapi import FastAPI
 #importar los routers
-from routers import product,users,jwt_auth_users,basic_auth_users
+from FastAPI.routers import users
 #importar recursos estaticos
 from fastapi.staticfiles import StaticFiles
 
