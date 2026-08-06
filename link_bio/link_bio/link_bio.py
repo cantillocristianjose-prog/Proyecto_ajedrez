@@ -1,24 +1,35 @@
 """Ctrl + Shift + P y poner "Python: Select Interpreter" y seleccionar el interprete de python que diga venv"""
 import reflex as rx
+import styles.styles as styles
 from components.navbar import navbar
 from views.headers.header import header
 from views.links.links import links
 from components.footer import footer
+
 class State(rx.State):
     pass
 
 def index() -> rx.Component:
-    return rx.vstack(
+    return rx.box(
         navbar(),
-        header(),
-        links(),
+        rx.center(
+            rx.vstack(
+                header(),
+                links(),
+                max_width=styles.MAX_WIDTH,
+                width="100%",
+                margin_y=styles.BIG_SIZE_Space,
+                border_radius="0.5rem",
+                direction="column",
+                align="center",
+                justify="center",
+                )
+            ),
         footer(),
-        width="100%",
-        border_radius="0.5rem",
-        direction="column",
-        align="center",
-        justify="center",
     )
 
-app = rx.App()
+
+app = rx.App(
+    style=styles.BASE_STYLE
+)
 app.add_page(index)
