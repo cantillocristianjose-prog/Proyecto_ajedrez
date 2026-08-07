@@ -40,9 +40,9 @@ title_style = dict(
 )
 
 button_title_style = dict(
-    font_Spacing = Spacing.MEDIUM_BIG.value
+    font_size=Spacing.MEDIUM_BIG.value
 )
 
 button_body_style = dict(
-    font_Spacing = Spacing.MEDIUM_BIG.value
+    font_size=Spacing.MEDIUM_BIG.value
 )

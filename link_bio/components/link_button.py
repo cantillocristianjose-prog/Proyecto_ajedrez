@@ -9,7 +9,7 @@ def link_button(title:str,body:str, url:str) -> rx.Component:
                 rx.icon(
                     tag="arrow_right",
                     width=Spacing.LARGE.value,
-                    heigth=Spacing.LARGE.value
+                    height=Spacing.LARGE.value
                 ),
                 rx.vstack(
                     rx.text(title,style=styles.button_title_style),

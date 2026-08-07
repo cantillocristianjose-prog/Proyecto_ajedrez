@@ -6,10 +6,9 @@ def navbar() -> rx.Component:
         rx.text("TheObsidianBoy"),
         position="sticky",
         bg="purple",
-        margin_y=Spacing.VERY_BIG.value,
-        padding_x=Spacing.BIG.value,
-        padding_y=Spacing.VERY_BIG.value,
+        padding_x=Size.BIG.value,
+        padding_y=Size.DEFAULT.value,
         z_index="999",
         width="100%",
-        top="0"
+        top="0",
     )

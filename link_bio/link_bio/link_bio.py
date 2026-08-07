@@ -19,14 +19,14 @@ def index() -> rx.Component:
                 links(),
                 max_width=MAX_WIDTH,
                 width="100%",
-                padding_x=Spacing.LARGE.value,
-                padding_y=Spacing.BIG.value,
+                padding_x=Size.LARGE.value,
+                padding_y=Size.BIG.value,
                 border_radius="0.5rem",
                 direction="column",
                 align="center",
                 justify="center",
-                )
-            ),
+            )
+        ),
         footer(),
     )
 
