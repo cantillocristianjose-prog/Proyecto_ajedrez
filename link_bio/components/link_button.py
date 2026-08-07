@@ -1,5 +1,6 @@
 import reflex as rx
 import styles.styles as styles
+from styles.styles import Size,Spacing
 
 def link_button(title:str,body:str, url:str) -> rx.Component:
     return rx.link(
@@ -7,8 +8,8 @@ def link_button(title:str,body:str, url:str) -> rx.Component:
             rx.hstack(
                 rx.icon(
                     tag="arrow_right",
-                    width=styles.BIG_SIZE_Space,
-                    heigth=styles.BIG_SIZE_Space
+                    width=Spacing.LARGE.value,
+                    heigth=Spacing.LARGE.value
                 ),
                 rx.vstack(
                     rx.text(title,style=styles.button_title_style),
