@@ -27,7 +27,7 @@ def index() -> rx.Component:
                 justify="center",
             )
         ),
-        footer(),
+        footer()
     )
 
 

@@ -9,13 +9,14 @@ def header() -> rx.Component:
             rx.avatar(fallback="TB", size="6"),
             rx.vstack(
                 rx.heading("TheObsidianBoy", size="7"),
-                rx.text("@TheObsidianBoy"),
+                rx.text("@TheObsidianBoy", margin_top=Size.ZERO.value),
                 rx.hstack(
                     link_icon("https://www.instagram.com/theobsidianboy?igsh=ejlmZ3EyNTI2c3R2"),
                     link_icon("https://www.instagram.com/theobsidianboy?igsh=ejlmZ3EyNTI2c3R2"),
                     link_icon("https://www.instagram.com/theobsidianboy?igsh=ejlmZ3EyNTI2c3R2"),
                 ),
                 align="start",
+                spacing=Spacing.ZERO.value,
             ),
         ),
         rx.flex(

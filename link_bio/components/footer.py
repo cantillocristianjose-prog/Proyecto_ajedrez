@@ -8,6 +8,8 @@ def footer() -> rx.Component:
         rx.text(
             f"TheObsidianBoy © 2024-{datetime.date.today().year}",
             font_size=Size.DEFAULT.value,
+            margin_top=Size.SMALL.value
         ),
+        align="center",
         margin_bottom=Size.BIG.value,
     )

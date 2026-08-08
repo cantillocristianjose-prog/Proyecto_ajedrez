@@ -1,4 +1,6 @@
 import reflex as rx
+import views.constants as constants
+from styles.styles import Size,Spacing
 from components.link_button import link_button
 from components.title import title
 
@@ -7,15 +9,16 @@ def links() -> rx.Component:
         title("Comunidad"),
         link_button("Instragram",
                     "Sígueme en Instagram",
-                    "https://www.instagram.com/theobsidianboy?igsh=ejlmZ3EyNTI2c3R2"),
+                    constants.INSTAGRAM_URL),
         link_button("Tiktok",
                     "Videos cortos y divertidos",
-                    "https://www.tiktok.com/@theobsidianboy?_t=ZS-8wpNOgZA0nK&_r=1"),
+                    constants.TIKTOK_URL),
         link_button("Twitch",
                     "Directos los sabados y festivos",
-                    "https://www.twitch.tv/theobsidianboy"),
+                    constants.TWITCH_URL),
         link_button("Youtube",
                     "Videos largo en duracion ¡con el doble de diversion!",
-                    "https://www.youtube.com/@TheObsidianBoy"),
+                    constants.YOUTUBE_URL),
         width="100%",
+        spacing=Spacing.MEDIUM_BIG.value,
     )
