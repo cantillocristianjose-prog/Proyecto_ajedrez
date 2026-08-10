@@ -6,8 +6,9 @@ from styles.styles import Size as Size
 def footer() -> rx.Component:
     return rx.vstack(
         rx.image(src="https://web.reflex-assets.dev/other/logo.jpg", alt="Logo", width="100px",height="100px"),
+#este se cambio desde el celular 2024 a 2023
         rx.text(
-            f"TheObsidianBoy © 2024-{datetime.date.today().year}",
+            f"TheObsidianBoy © 2023-{datetime.date.today().year}",
             font_size=Size.DEFAULT.value,
             margin_top=Size.SMALL.value
         ),
