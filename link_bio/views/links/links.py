@@ -19,6 +19,5 @@ def links() -> rx.Component:
         link_button("Youtube",
                     "Videos largo en duracion ¡con el doble de diversion!",
                     constants.YOUTUBE_URL),
-        width="100%",
-        spacing=Spacing.MEDIUM_BIG.value,
+        width="100%"
     )

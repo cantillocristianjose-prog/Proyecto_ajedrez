@@ -1,9 +1,10 @@
 import reflex as rx
-from styles.colors import Color as Color
-from styles.colors import TextColor as TextColor
+from styles.colors import Color
+from styles.fonts import Font
+from styles.colors import TextColor
 from enum import Enum
 #Constantes
-MAX_WIDTH = "560px"
+MAX_WIDTH = "600px"
 
 #Spacings
 class Size(Enum):
@@ -27,7 +28,13 @@ class Spacing(Enum):
     VERY_BIG = "9"
 
 BASE_STYLE = {
+    "font_family": Font.DEFAULT.value,
     "background_color":Color.BACKGROUND.value,
+    rx.heading: {
+        "size":"7",
+        "color":TextColor.HEADER.value,
+        "font_family": Font.TITLE.value
+    },
     rx.button: {
         "width": "100%",
         "height": "100%",
@@ -39,18 +46,32 @@ BASE_STYLE = {
         "_hover": {
             "background_color":Color.SECONDARY.value
         }
+    },
+    rx.link: {
+        "text_decoration": "none",
+        "_hover": {}
     }
 }
 
+nabvar_title_style = dict(
+    font_family=Font.LOGO.value,
+    font_size=Size.LARGE.value
+)
+
 title_style = dict(
     width="100%",
+    size="7",
     padding_top=Size.DEFAULT.value
 )
 
 button_title_style = dict(
-    font_size=Size.DEFAULT.value
+    font_family=Font.TITLE.value,
+    font_size=Size.DEFAULT.value,
+    color=TextColor.HEADER.value
 )
 
 button_body_style = dict(
-    font_size=Size.MEDIUM.value
+    font_family=Font.DEFAULT.value,
+    font_size=Size.MEDIUM.value,
+    color=TextColor.BODY.value
 )

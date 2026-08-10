@@ -1,6 +1,8 @@
 """Ctrl + Shift + P y poner "Python: Select Interpreter" y seleccionar el interprete de python que diga venv"""
 import reflex as rx
-from styles.styles import BASE_STYLE, MAX_WIDTH,Size,Spacing
+import styles.styles as styles
+from styles.styles import Size
+from styles.colors import Color
 from components.navbar import navbar
 from views.headers.header import header
 from views.links.links import links
@@ -17,14 +19,10 @@ def index() -> rx.Component:
             rx.vstack(
                 header(),
                 links(),
-                max_width=MAX_WIDTH,
+                max_width=styles.MAX_WIDTH,
                 width="100%",
-                padding_x=Size.LARGE.value,
-                padding_y=Size.BIG.value,
-                border_radius="0.5rem",
-                direction="column",
-                align="center",
-                justify="center",
+                margin_y=Size.BIG.value,
+                padding=Size.BIG.value
             )
         ),
         footer()
@@ -32,6 +30,11 @@ def index() -> rx.Component:
 
 
 app = rx.App(
-    style=BASE_STYLE
+    style=styles.BASE_STYLE,
+    stylesheets=[
+        "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap",
+        "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap",
+        "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap"
+    ]
 )
 app.add_page(index)

@@ -1,6 +1,7 @@
 import reflex as rx
 import datetime
-from styles.styles import Size as Size,Spacing
+from styles.colors import TextColor as TextColor
+from styles.styles import Size as Size
 
 def footer() -> rx.Component:
     return rx.vstack(
@@ -10,6 +11,7 @@ def footer() -> rx.Component:
             font_size=Size.DEFAULT.value,
             margin_top=Size.SMALL.value
         ),
+        direction="column",
         align="center",
-        margin_bottom=Size.BIG.value,
+        justify="center",
     )
