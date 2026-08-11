@@ -1,10 +1,11 @@
 import reflex as rx
-import styles.styles as styles
+from styles.styles import Size as Size
 
-def link_icon(url:str) -> rx.Component:
+def link_icon(image: str, url:str) -> rx.Component:
     return rx.link(
-        rx.icon(
-            tag="compass"
+        rx.image(
+            src=image,
+            width=Size.DEFAULT.value
         ),
         href=url,
         is_external=True,

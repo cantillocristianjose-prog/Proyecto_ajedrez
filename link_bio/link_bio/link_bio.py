@@ -31,10 +31,11 @@ def index() -> rx.Component:
 
 app = rx.App(
     style=styles.BASE_STYLE,
-    stylesheets=[
-        "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap",
-        "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap",
-        "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap"
-    ]
+    stylesheets=styles.STYLESHEETS
 )
-app.add_page(index)
+app.add_page(
+    index,
+    title="TheObsidianBoy | Mi linkbiografica",
+    description="Hola mi nombre es TheObsidianBoy y soy creador de contenido",
+    image="foto_de_sebas.jpeg"
+    )

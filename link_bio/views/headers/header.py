@@ -11,7 +11,17 @@ from styles.styles import Size,Spacing
 def header() -> rx.Component:
     return rx.vstack(
         rx.hstack(
-            rx.avatar(fallback="TB",size="6",bg=Color.PRIMARY.value,color=Color.SECONDARY.value),
+            rx.avatar(
+                fallback="TB",
+                size="6",
+                bg=Color.PRIMARY.value,
+                color=Color.CONTENT.value,
+                src="foto_de_sebas.jpeg",
+                radius="full",
+                padding="2px",
+                border="4px",
+                border_color=Color.PRIMARY.value
+            ),
             rx.vstack(
                 rx.heading(
                     "TheObsidianBoy",
@@ -19,9 +29,19 @@ def header() -> rx.Component:
                 ),
                 rx.text("@TheObsidianBoy", margin_top=Size.ZERO.value,color=TextColor.BODY.value),
                 rx.hstack(
-                    link_icon(const.TIKTOK_URL),
-                    link_icon(const.INSTAGRAM_URL),
-                    link_icon(const.YOUTUBE_URL),
+                    link_icon(
+                        "icons/tiktok.svg",
+                        const.TIKTOK_URL
+                    ),
+                    link_icon(
+                        "icons/instagram.svg",
+                        const.INSTAGRAM_URL
+                    ),
+                    link_icon(
+                        "icons/youtube.svg",
+                        const.YOUTUBE_URL
+                    ),
+                    spacing=Spacing.DEFAULT.value
                 ),
                 align="start",
                 spacing=Spacing.ZERO.value
@@ -44,7 +64,8 @@ def header() -> rx.Component:
             Resident Evil, 
             Devil May Cry y Halo, 
             espero que la pases bien por aquí con gameplays que disfrutes! ♡ """,
-            color=TextColor.BODY.value
+            color=TextColor.BODY.value,
+            font_size=Size.MEDIUM.value
         ),
         spacing=Spacing.BIG.value,
         align="start",

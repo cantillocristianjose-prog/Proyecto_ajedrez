@@ -27,6 +27,12 @@ class Spacing(Enum):
     MEDIUM_BIG = "7"
     VERY_BIG = "9"
 
+STYLESHEETS = [
+    "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap",
+    "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap",
+    "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap"
+]
+
 BASE_STYLE = {
     "font_family": Font.DEFAULT.value,
     "background_color":Color.BACKGROUND.value,
@@ -38,11 +44,12 @@ BASE_STYLE = {
     rx.button: {
         "width": "100%",
         "height": "100%",
-        "display": "block",
         "padding": Size.SMALL.value,
         "border_radius": Size.DEFAULT.value,
         "color":TextColor.HEADER.value,
         "background_color":Color.PRIMARY.value,
+        "white_space": "normal",
+        "text_align":"start",
         "_hover": {
             "background_color":Color.SECONDARY.value
         }
