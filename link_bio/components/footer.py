@@ -1,11 +1,17 @@
 import reflex as rx
 import datetime
+import styles.styles as styles
 from styles.colors import TextColor as TextColor
 from styles.styles import Size as Size
 
 def footer() -> rx.Component:
     return rx.vstack(
-        rx.image(src="https://web.reflex-assets.dev/other/logo.jpg", alt="Logo", width="100px",height="100px"),
+        rx.image(
+            src="foto_de_sebas.jpeg",
+            alt="Logo de TheObsidanBoy",
+            width=Size.VERY_BIG.value,
+            height=Size.VERY_BIG.value
+        ),
 #este se cambio desde el celular 2024 a 2023
         rx.text(
             f"TheObsidianBoy © 2023-{datetime.date.today().year}",

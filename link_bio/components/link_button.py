@@ -8,9 +8,10 @@ def link_button(title:str,body: str, image: str ,url:str) -> rx.Component:
             rx.hstack(
                 rx.image(
                     src=image,
-                    width=Size.BIG.value,
-                    height=Size.BIG.value,
-                    margin=Size.MEDIUM.value
+                    width=Size.VERY_BIG.value,
+                    height=Size.VERY_BIG.value,
+                    margin=Size.MEDIUM.value,
+                    alt=title
                 ),
                 rx.vstack(
                     rx.text(title,style=styles.button_title_style),

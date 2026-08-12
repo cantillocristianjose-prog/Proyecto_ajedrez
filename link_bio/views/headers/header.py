@@ -31,15 +31,18 @@ def header() -> rx.Component:
                 rx.hstack(
                     link_icon(
                         "icons/tiktok.svg",
-                        const.TIKTOK_URL
+                        const.TIKTOK_URL,
+                        "tiktok"
                     ),
                     link_icon(
                         "icons/instagram.svg",
-                        const.INSTAGRAM_URL
+                        const.INSTAGRAM_URL,
+                        "instagram"
                     ),
                     link_icon(
                         "icons/youtube.svg",
-                        const.YOUTUBE_URL
+                        const.YOUTUBE_URL,
+                        "youtube"
                     ),
                     spacing=Spacing.DEFAULT.value
                 ),

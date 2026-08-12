@@ -9,6 +9,7 @@ from views.links.links import links
 from components.footer import footer
 
 
+
 class State(rx.State):
     pass
 
@@ -29,13 +30,17 @@ def index() -> rx.Component:
     )
 
 
+
 app = rx.App(
+    head_components=[
+            # Esta es la etiqueta que hace que aparezca tu imagen al compartir el link
+            rx.el.meta(property="og:image", content="/foto_de_sebas.png")
+        ],
     style=styles.BASE_STYLE,
     stylesheets=styles.STYLESHEETS
 )
 app.add_page(
     index,
     title="TheObsidianBoy | Mi linkbiografica",
-    description="Hola mi nombre es TheObsidianBoy y soy creador de contenido",
-    image="foto_de_sebas.jpeg"
-    )
+    description="Hola mi nombre es TheObsidianBoy y soy creador de contenido"
+)
