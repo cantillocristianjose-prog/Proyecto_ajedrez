@@ -16,7 +16,7 @@ def header() -> rx.Component:
                 size="6",
                 bg=Color.PRIMARY.value,
                 color=Color.CONTENT.value,
-                src="foto_de_sebas.jpeg",
+                src="icons/foto_de_sebas.jpeg",
                 radius="full",
                 padding="2px",
                 border="4px",
