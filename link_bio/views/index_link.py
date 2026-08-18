@@ -1,10 +1,11 @@
 import reflex as rx
 import views.constants as constants
+from routers import Route
 from styles.styles import Size,Spacing
 from components.link_button import link_button
 from components.title import title
-#se cambio el titulo comunidad por redes sociales y se agrego un nuevo titulo
-def links() -> rx.Component:
+
+def index_link() -> rx.Component:
     return rx.vstack(
         title("Redes sociales"),
         link_button("Instragram",
@@ -28,5 +29,12 @@ def links() -> rx.Component:
                     "Proyecto en youtube",
                     "icons/youtube.svg",
                     constants.YOUTUBE_SECONDARY_URL),
+        link_button(
+            "Nuevo comienzo",
+            "¿y que tal si empezamos de nuevo?",
+            "icons/youtube.svg",
+            Route.VIDEOS.value,
+            is_external=False
+        ),
         width="100%"
     )

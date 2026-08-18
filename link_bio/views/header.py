@@ -1,4 +1,5 @@
 import reflex as rx
+import datetime
 import views.constants as const
 from styles.fonts import Font
 from components.title import title
@@ -7,6 +8,7 @@ from styles.colors import Color
 from components.link_icon import link_icon
 from components.info_text import info_text
 from styles.styles import Size,Spacing
+años_actual = datetime.date.today().year
 
 def header() -> rx.Component:
     return rx.vstack(
