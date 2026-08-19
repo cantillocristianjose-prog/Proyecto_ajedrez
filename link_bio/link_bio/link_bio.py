@@ -2,7 +2,7 @@
 import reflex as rx
 import styles.styles as styles
 from pages.index import index
-from pages.videos import videos
+from pages.libros import libros
 
 
 app = rx.App(

@@ -7,7 +7,7 @@ from styles.styles import Size as Size
 def footer() -> rx.Component:
     return rx.vstack(
         rx.image(
-            src="icons/foto_de_sebas.jpeg",
+            src="/icons/foto_de_sebas.jpeg",
             alt="Logo de TheObsidanBoy",
             width=Size.VERY_BIG.value,
             height=Size.VERY_BIG.value

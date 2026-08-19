@@ -27,11 +27,11 @@ index_meta = [
 index_meta.extend(_meta)
 #Videos
 
-videos_title = "TheObsidianBoy | videos"
-videos_descripcion = "este es un listado de mis videos"
+libros_title = "TheObsidianBoy | Libros"
+libros_descripcion = "este es un listado de mis libros"
 
 videos_meta = [
-    {"name": "og:title", "content": videos_title},
-    {"name": "og:description", "content": videos_descripcion}
+    {"name": "og:title", "content": libros_title},
+    {"name": "og:description", "content": libros_descripcion}
 ]
 videos_meta.extend(_meta)

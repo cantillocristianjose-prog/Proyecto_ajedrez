@@ -10,7 +10,7 @@ from components.info_text import info_text
 from styles.styles import Size,Spacing
 años_actual = datetime.date.today().year
 
-def header() -> rx.Component:
+def header(details = True) -> rx.Component:
     return rx.vstack(
         rx.hstack(
             rx.avatar(
@@ -18,7 +18,7 @@ def header() -> rx.Component:
                 size="6",
                 bg=Color.PRIMARY.value,
                 color=Color.CONTENT.value,
-                src="icons/foto_de_sebas.jpeg",
+                src="/icons/foto_de_sebas.jpeg",
                 radius="full",
                 padding="2px",
                 border="4px",
@@ -53,24 +53,29 @@ def header() -> rx.Component:
             ),
             spacing=Spacing.MEDIUM_SMALL.value
         ),
-        rx.flex(
-            info_text("16", " años de edad"),
-            rx.spacer(),
-            info_text("16", " años a cumplir el canal"),
-            rx.spacer(),
-            info_text("5", " años el canal segundario a cumplir"),
-            width="100%",
-            spacing="5",
-        ),
-        rx.text(
-            """Bienvenido a mi canal! soy TheObsidianBoy, 
-            un Youtuber Colombiano🇨🇴 , 
-            amante a los videojuegos como Minecraft, 
-            Resident Evil, 
-            Devil May Cry y Halo, 
-            espero que la pases bien por aquí con gameplays que disfrutes! ♡ """,
-            color=TextColor.BODY.value,
-            font_size=Size.MEDIUM.value
+        rx.cond(
+            details,
+            rx.vstack(
+                rx.flex(
+                    info_text("16", " años de edad"),
+                    rx.spacer(),
+                    info_text(f"{datetime.date.today().year - 2023}", " años a cumplir el canal"),
+                    width="100%",
+                    spacing="1",
+                ),
+                rx.text(
+                        """Bienvenido a mi canal! soy TheObsidianBoy, 
+                    un Youtuber Colombiano🇨🇴 , 
+                    amante a los videojuegos como Minecraft, 
+                    Resident Evil, 
+                    Devil May Cry y Halo, 
+                    espero que la pases bien por aquí con gameplays que disfrutes! ♡ """,
+                    color=TextColor.BODY.value,
+                    font_size=Size.MEDIUM.value
+                ),
+                width="100%",
+                spacing=Spacing.BIG.value
+            )
         ),
         spacing=Spacing.BIG.value,
         align="start",

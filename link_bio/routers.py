@@ -1,5 +1,5 @@
 from enum import Enum
 
 class Route(Enum):
-    INDEX = ""
-    VIDEOS = "/videos"
+    INDEX = "/"
+    LIBROS = "/libros"

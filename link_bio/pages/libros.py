@@ -6,25 +6,25 @@ from styles.styles import Size
 from styles.colors import Color
 from components.navbar import navbar
 from views.header import header
-from views.index_link import index_link
+from views.libros_link import libros_link
 from components.footer import footer
 
 @rx.page(
-        route=Route.VIDEOS.value,
-        title=utils.videos_title,
-        description=utils.videos_descripcion,
+        route=Route.LIBROS.value,
+        title=utils.libros_title,
+        description=utils.libros_descripcion,
         image=utils.preview,
         meta=utils.videos_meta
 )
 
-def videos() -> rx.Component:
+def libros() -> rx.Component:
     return rx.box(
         utils.lang(),
         navbar(),
         rx.center(
             rx.vstack(
-                header(),
-                index_link(),
+                header(details=False),
+                libros_link(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value,
