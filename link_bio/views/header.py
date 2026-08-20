@@ -60,8 +60,8 @@ def header(details = True) -> rx.Component:
                     info_text("16", " años de edad"),
                     rx.spacer(),
                     info_text(f"{datetime.date.today().year - 2023}", " años a cumplir el canal"),
-                    width="100%",
-                    spacing="1",
+                    rx.spacer(),
+                    width="100%"
                 ),
                 rx.text(
                         """Bienvenido a mi canal! soy TheObsidianBoy, 

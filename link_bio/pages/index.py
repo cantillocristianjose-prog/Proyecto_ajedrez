@@ -7,6 +7,9 @@ from components.navbar import navbar
 from views.header import header
 from views.index_link import index_link
 from components.footer import footer
+
+class State(rx.State):
+    """Pom aqui tu descripcion"""
 # los iconos son sacado de https://fontawesome.com/
 @rx.page(
         title=utils.index_title,

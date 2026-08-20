@@ -4,6 +4,7 @@ from styles.colors import Color as Color
 from styles.colors import TextColor as TextColor
 from styles.styles import Size,Spacing
 from routers import Route
+from components.ant_component import float_buttom
 import styles.styles as styles
 def navbar() -> rx.Component:
     return rx.hstack(
