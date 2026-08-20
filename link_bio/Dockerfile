@@ -1,6 +1,7 @@
 FROM python:3.11
 
 WORKDIR /app
+
 COPY . .
 
 ENV VIRTUAL_ENV=/app/.venv_docker
