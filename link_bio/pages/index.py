@@ -14,11 +14,11 @@ from api.api import API_hello
 
 # los iconos son sacado de https://fontawesome.com/
 @rx.page(
-        title=utils.index_title,
-        description=utils.index_descripcion,
-        image=utils.preview,
-        meta=utils.index_meta,
-        on_load=PageState.check_live
+    title=utils.index_title,
+    description=utils.index_descripcion,
+    image=utils.preview,
+    meta=utils.index_meta,
+    on_load=PageState.check_live
 )
 
 def index() -> rx.Component:
