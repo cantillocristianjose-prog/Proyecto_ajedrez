@@ -10,7 +10,7 @@ from components.info_text import info_text
 from styles.styles import Size,Spacing
 años_actual = datetime.date.today().year
 
-def header(details = True) -> rx.Component:
+def header(details = True, live=False) -> rx.Component:
     return rx.vstack(
         rx.hstack(
             rx.avatar(
@@ -24,6 +24,13 @@ def header(details = True) -> rx.Component:
                 border="4px",
                 border_color=Color.PRIMARY.value
             ),
+            rx.cond(
+                live,
+                rx.badge("En directo",
+                         size="2",
+                         color_scheme="purple"
+                )
+            ),    
             rx.vstack(
                 rx.heading(
                     "TheObsidianBoy",
@@ -60,7 +67,6 @@ def header(details = True) -> rx.Component:
                     info_text("16", " años de edad"),
                     rx.spacer(),
                     info_text(f"{datetime.date.today().year - 2023}", " años a cumplir el canal"),
-                    rx.spacer(),
                     width="100%"
                 ),
                 rx.text(

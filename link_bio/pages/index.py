@@ -8,9 +8,14 @@ from views.header import header
 from views.index_link import index_link
 from components.footer import footer
 from api.api import API_hello
+from api.api import live
 
 class IndexState(rx.State):
-    pass
+
+    is_live: bool
+
+    async def check_live(self) -> bool:
+        self.is_live = await live("sebastian")
 
 # los iconos son sacado de https://fontawesome.com/
 @rx.page(
@@ -26,7 +31,9 @@ def index() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(
-                header(),
+                header(
+                    live=IndexState.is_live
+                ),
                 index_link(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
