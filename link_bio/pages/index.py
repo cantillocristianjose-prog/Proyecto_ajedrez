@@ -1,6 +1,7 @@
 import reflex as rx
 import styles.styles as styles
 import views.utils as utils
+from state.PageState import PageState
 from styles.styles import Size
 from styles.colors import Color
 from components.navbar import navbar
@@ -8,14 +9,8 @@ from views.header import header
 from views.index_link import index_link
 from components.footer import footer
 from api.api import API_hello
-from api.api import live
 
-class IndexState(rx.State):
 
-    is_live: bool
-
-    async def check_live(self) -> bool:
-        self.is_live = await live("sebastian")
 
 # los iconos son sacado de https://fontawesome.com/
 @rx.page(
@@ -23,7 +18,7 @@ class IndexState(rx.State):
         description=utils.index_descripcion,
         image=utils.preview,
         meta=utils.index_meta,
-        on_load=IndexState.check_live
+        on_load=PageState.check_live
 )
 
 def index() -> rx.Component:
@@ -33,7 +28,7 @@ def index() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(
-                    live=IndexState.is_live
+                    live=PageState.is_live
                 ),
                 index_link(),
                 max_width=styles.MAX_WIDTH,
