@@ -8,12 +8,12 @@ from views.header import header
 from views.index_link import index_link
 from components.footer import footer
 from api.api import API_hello
-from api.api import hello
+from api.api import repo
 
 class IndexState(rx.State):
     @rx.var(cache=False)
-    def say_hello(self) -> str:
-        return hello()
+    def say_repo(self) -> str:
+        return repo()
 
 # los iconos son sacado de https://fontawesome.com/
 @rx.page(
@@ -29,7 +29,7 @@ def index() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(
-                rx.text(IndexState.say_hello),
+                rx.text(IndexState.say_repo),
                 header(),
                 index_link(),
                 max_width=styles.MAX_WIDTH,

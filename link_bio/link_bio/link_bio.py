@@ -7,7 +7,6 @@ from pages.libros import libros
 from api.api import API_hello
 from fastapi import FastAPI
 
-api = FastAPI()
 
 app = rx.App(
     style=styles.BASE_STYLE,

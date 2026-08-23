@@ -3,6 +3,6 @@ from fastapi import FastAPI
 
 API_hello = FastAPI()
 
-@API_hello.get("/hello")
+@API_hello.get("/repo")
 def repo() -> str:
-    return "TheObsidanBoy!"
+    return const.REPOSITORIO_MIO
