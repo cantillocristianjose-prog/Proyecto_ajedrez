@@ -7,9 +7,14 @@ from components.navbar import navbar
 from views.header import header
 from views.index_link import index_link
 from components.footer import footer
+from api.api import API_hello
+from api.api import hello
 
-class State(rx.State):
-    """Pom aqui tu descripcion"""
+class IndexState(rx.State):
+    @rx.var(cache=False)
+    def say_hello(self) -> str:
+        return hello()
+
 # los iconos son sacado de https://fontawesome.com/
 @rx.page(
         title=utils.index_title,
@@ -24,6 +29,7 @@ def index() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(
+                rx.text(IndexState.say_hello),
                 header(),
                 index_link(),
                 max_width=styles.MAX_WIDTH,
