@@ -1,7 +1,8 @@
+import views.constants as const
 from fastapi import FastAPI
 
 API_hello = FastAPI()
 
 @API_hello.get("/hello")
-def hello() -> str:
+def repo() -> str:
     return "TheObsidanBoy!"
