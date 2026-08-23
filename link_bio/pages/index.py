@@ -22,7 +22,8 @@ class IndexState(rx.State):
         title=utils.index_title,
         description=utils.index_descripcion,
         image=utils.preview,
-        meta=utils.index_meta
+        meta=utils.index_meta,
+        on_load=IndexState.check_live
 )
 
 def index() -> rx.Component:
