@@ -9,6 +9,4 @@ async def repo() -> str:
 
 @API_hello.get("/live/{user}")
 async def live(user: str) -> bool:
-    if user == "sebastian":
-        return True
     return False
