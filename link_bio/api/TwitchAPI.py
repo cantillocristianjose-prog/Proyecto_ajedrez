@@ -36,7 +36,22 @@ class TwitchAPI:
     def token_valid(self) -> bool:
         return time.time() < self.token_exp
 
-    def live(self) -> bool:
+    def live(self, user: str) -> bool:
 
         if not self.token_valid():
             self.generate_token()
+
+        response = requests.get(
+            f"https://api.twitch.tv/helix/streams?user_login={user}",
+            headers={
+                "Client-ID":self.CLIENT_ID,
+                "Authorization": f"Bearer{self.token}"
+            }
+        )
+
+        if response.status_code == 200 and response.json()["data"]:
+            data = response.json()["data"]
+            print(data)
+            return True
+
+        return False        

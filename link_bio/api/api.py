@@ -1,5 +1,9 @@
 import views.constants as const
 from fastapi import FastAPI
+from .TwitchAPI import TwitchAPI
+
+TWITCH_API = TwitchAPI()
+
 
 API_hello = FastAPI()
 
@@ -9,4 +13,4 @@ async def repo() -> str:
 
 @API_hello.get("/live/{user}")
 async def live(user: str) -> bool:
-    return False
+    return TWITCH_API.live(user)
