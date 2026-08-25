@@ -8,7 +8,6 @@ class TwitchAPI:
     env_path = Path(__file__).resolve().parent.parent / '.env'
     dotenv.load_dotenv(dotenv_path=env_path)
 
-    dotenv.load_dotenv()
 
     CLIENT_ID = os.environ.get("TWITCH_CLIENT_ID")
     CLIENT_SECRET = os.environ.get("TWITCH_CLIENT_SECRET")
