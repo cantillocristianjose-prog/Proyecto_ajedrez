@@ -7,8 +7,8 @@ class TwitchAPI:
 
     dotenv.load_dotenv()
 
-    CLIENT_ID = os.environ.get("TWICHT_CLIENT_ID")
-    CLIENT_SECRET = os.environ.get("TWICHT_CLIENT_SECRET")
+    CLIENT_ID = os.environ.get("TWITCH_CLIENT_ID")
+    CLIENT_SECRET = os.environ.get("TWITCH_CLIENT_SECRET")
 
     def __init__(self):
         self.token = None
@@ -45,7 +45,7 @@ class TwitchAPI:
             f"https://api.twitch.tv/helix/streams?user_login={user}",
             headers={
                 "Client-ID":self.CLIENT_ID,
-                "Authorization": f"Bearer{self.token}"
+                "Authorization": f"Bearer {self.token}"
             }
         )
 
