@@ -11,5 +11,5 @@ config = rx.Config(
         rx.plugins.SitemapPlugin(),
         rx.plugins.TailwindV4Plugin(),
     ],
-    api_url="https://theobsidianboy-web.up.railway.app"
+    api_url="https://api-de-la-web.up.railway.app"
 )

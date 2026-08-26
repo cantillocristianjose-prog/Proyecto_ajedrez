@@ -52,6 +52,9 @@ class TwitchAPI:
             }
         )
 
+        print(f"Estado de la API de Twitch para {user}:", response.status_code)
+        print("Respuesta completa de Twitch:", response.text)
+
         if response.status_code == 200 and response.json()["data"]:
             data = response.json()["data"]
             print(data)
