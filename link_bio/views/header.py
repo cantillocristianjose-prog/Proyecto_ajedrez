@@ -53,6 +53,11 @@ def header(details = True, live=False) -> rx.Component:
                         const.YOUTUBE_URL,
                         "youtube"
                     ),
+                    link_icon(
+                        "icons/github.svg",
+                        const.REPOSITORIO_MIO,
+                        "Repositorio del proyecto"
+                    ),
                     spacing=Spacing.DEFAULT.value
                 ),
                 align="start",
