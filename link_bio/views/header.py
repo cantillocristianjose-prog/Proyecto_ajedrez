@@ -6,6 +6,7 @@ from components.title import title
 from styles.colors import TextColor
 from styles.colors import Color
 from components.link_icon import link_icon
+from components.link_button import link_button
 from components.info_text import info_text
 from styles.styles import Size,Spacing
 años_actual = datetime.date.today().year
@@ -29,7 +30,7 @@ def header(details = True, live=False) -> rx.Component:
                 rx.link(
                     rx.badge(
                         rx.image(src="/icons/twitch-brands-solid-full.svg",width="20px",height="20px"),
-                        rx.text("En directo"),
+                        radius="full",
                         size="2",
                         color_scheme="purple",
                         class_name="blink"
@@ -80,6 +81,15 @@ def header(details = True, live=False) -> rx.Component:
                     rx.spacer(),
                     info_text(f"{datetime.date.today().year - 2023}", " años a cumplir el canal"),
                     width="100%"
+                ),
+                rx.cond(
+                    True,
+                    link_button(
+                        "En vivo",
+                        "",
+                        "/icons/twitch-brands-solid-full.svg",
+                        const.TWITCH_URL
+                    )
                 ),
                 rx.text(
                         """Bienvenido a mi canal! soy TheObsidianBoy, 
