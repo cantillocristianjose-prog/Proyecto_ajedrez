@@ -7,6 +7,6 @@ class PageState(rx.State):
     live_title: str
 
     async def check_live(self):
-        live_data = await live("byjuanjo300")
+        live_data = await live("theobsidianboy")
         self.is_live = live_data["live"]
         self.live_title = live_data["titulo"]
