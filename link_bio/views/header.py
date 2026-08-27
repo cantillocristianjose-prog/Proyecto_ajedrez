@@ -11,7 +11,7 @@ from components.info_text import info_text
 from styles.styles import Size,Spacing
 años_actual = datetime.date.today().year
 
-def header(details = True, live=False) -> rx.Component:
+def header(details = True, live=False, live_title="") -> rx.Component:
     return rx.vstack(
         rx.hstack(
             rx.avatar(
@@ -86,7 +86,7 @@ def header(details = True, live=False) -> rx.Component:
                     True,
                     link_button(
                         "En vivo",
-                        "",
+                        live_title,
                         "/icons/twitch-brands-solid-full.svg",
                         const.TWITCH_URL
                     )
