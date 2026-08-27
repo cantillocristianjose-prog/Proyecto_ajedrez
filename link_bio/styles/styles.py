@@ -30,7 +30,8 @@ class Spacing(Enum):
 STYLESHEETS = [
     "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap",
     "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap",
-    "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap"
+    "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap",
+    "/css/styles.css"
 ]
 
 BASE_STYLE = {

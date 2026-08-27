@@ -25,12 +25,17 @@ def header(details = True, live=False) -> rx.Component:
                 border_color=Color.PRIMARY.value
             ),
             rx.cond(
-                live,
-                rx.badge(
-                    rx.image(src="/icons/twitch-brands-solid-full.svg",width="20px",height="20px"),
-                    rx.text("En directo"),
-                    size="2",
-                    color_scheme="purple"
+                True,
+                rx.link(
+                    rx.badge(
+                        rx.image(src="/icons/twitch-brands-solid-full.svg",width="20px",height="20px"),
+                        rx.text("En directo"),
+                        size="2",
+                        color_scheme="purple",
+                        class_name="blink"
+                    ),
+                    href=const.TWITCH_URL,
+                    is_external=True
                 )
             ),    
             rx.vstack(

@@ -5,7 +5,6 @@ from fastapi import FastAPI
 from pages.index import index
 from pages.libros import libros
 from api.api import API_hello
-from fastapi import FastAPI
 
 
 app = rx.App(
