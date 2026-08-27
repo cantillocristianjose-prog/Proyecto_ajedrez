@@ -26,9 +26,11 @@ def header(details = True, live=False) -> rx.Component:
             ),
             rx.cond(
                 live,
-                rx.badge("En directo",
-                         size="2",
-                         color_scheme="purple"
+                rx.badge(
+                    rx.image(src="/icons/twitch-brands-solid-full.svg",width="20px",height="20px"),
+                    rx.text("En directo"),
+                    size="2",
+                    color_scheme="purple"
                 )
             ),    
             rx.vstack(
