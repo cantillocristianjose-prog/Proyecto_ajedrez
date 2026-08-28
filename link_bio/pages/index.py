@@ -18,7 +18,7 @@ from api.api import API_hello
     description=utils.index_descripcion,
     image=utils.preview,
     meta=utils.index_meta,
-    on_load=PageState.check_live
+    on_load=[PageState.check_live,PageState.featured_links]
 )
 
 def index() -> rx.Component:
@@ -31,7 +31,7 @@ def index() -> rx.Component:
                     live=PageState.is_live,
                     live_title=PageState.live_title
                 ),
-                index_link(),
+                index_link(PageState.featured_info),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value,

@@ -1,9 +1,10 @@
 import views.constants as const
 from fastapi import FastAPI
 from .TwitchAPI import TwitchAPI
+from .SuperbaseAPI import SuperbaseAPI
 
 TWITCH_API = TwitchAPI()
-
+SUPABASE_API = SuperbaseAPI()
 
 API_hello = FastAPI()
 
@@ -14,3 +15,6 @@ async def repo() -> str:
 @API_hello.get("/live/{user}")
 async def live(user: str) -> dict:
     return TWITCH_API.live(user)
+
+async def featured() -> list:
+    return SUPABASE_API.featured()

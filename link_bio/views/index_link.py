@@ -5,7 +5,7 @@ from styles.styles import Size,Spacing
 from components.link_button import link_button
 from components.title import title
 
-def index_link() -> rx.Component:
+def index_link(featured = []) -> rx.Component:
     return rx.vstack(
         title("Redes sociales"),
         link_button("Instragram",
@@ -20,6 +20,28 @@ def index_link() -> rx.Component:
                     "Directos los sabados y festivos",
                     "/icons/twitch-brands-solid-full.svg",
                     constants.TWITCH_URL),
+
+        # rx.cond(
+        #     len(featured) > 0,
+        #     rx.vstack(
+        #         title("Destacada"),
+        #         rx.foreach(
+        #             featured,
+        #             lambda item: rx.grid(
+        #                 rx.link(
+        #                     rx.image(
+        #                         src=item["image"]
+        #                     ),
+        #                     rx.text(
+        #                         item["title"]
+        #                     ),
+        #                     href=item["url"],
+        #                     is_external=True
+        #                 )
+        #             )
+        #         )
+        #     )
+        # ),
         title("Canales"),
         link_button("Youtube",
                     "Videos para pasar el rato",
