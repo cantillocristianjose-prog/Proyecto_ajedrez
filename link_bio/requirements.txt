@@ -1,4 +1,4 @@
-reflex==0.9.7
+reflex==0.9.8
 fastapi
 python-dotenv
 requests
