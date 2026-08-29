@@ -19,6 +19,9 @@ class SuperbaseAPI:
 
     def featured(self) -> list:
 
+        if self.supabase is None:
+            self.create_client()
+
         response = self.supabase.table("featuared").select("*").execute()
 
         featured_data = []
