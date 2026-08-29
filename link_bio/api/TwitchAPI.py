@@ -52,6 +52,16 @@ class TwitchAPI:
             }
         )
 
+        if response.status_code == 401:
+            self.generate_token()
+            response = requests.get(
+                f"https://api.twitch.tv/helix/streams?user_login={user}",
+                headers={
+                    "Client-ID": self.CLIENT_ID,
+                    "Authorization": f"Bearer {self.token}"
+                }
+            )
+
         print(f"Estado de la API de Twitch para {user}:", response.status_code)
         print("Respuesta completa de Twitch:", response.text)
 
