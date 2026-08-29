@@ -23,8 +23,8 @@ class TwitchAPI:
             "https://id.twitch.tv/oauth2/token",
             data={
                 "client_id": self.CLIENT_ID,
-                "client_secret":self.CLIENT_SECRET,
-                "grant_type":"client_credentials"
+                "client_secret": self.CLIENT_SECRET,
+                "grant_type": "client_credentials"
             }
         )
 
