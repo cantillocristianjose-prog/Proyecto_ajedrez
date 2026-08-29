@@ -26,7 +26,7 @@ def header(details = True, live=False, live_title="") -> rx.Component:
                 border_color=Color.PRIMARY.value
             ),
             rx.cond(
-                True,
+                live,
                 rx.link(
                     rx.badge(
                         rx.image(src="/icons/twitch-brands-solid-full.svg",width="20px",height="20px"),
@@ -83,7 +83,7 @@ def header(details = True, live=False, live_title="") -> rx.Component:
                     width="100%"
                 ),
                 rx.cond(
-                    True,
+                    live,
                     link_button(
                         "En vivo",
                         live_title,
