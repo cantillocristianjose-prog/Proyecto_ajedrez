@@ -51,7 +51,7 @@ class TwitchAPI:
                 "Authorization": f"Bearer {self.token}"
             }
         )
-
+        # se añadio este token por que el no sirve del todo
         if response.status_code == 401:
             self.generate_token()
             response = requests.get(
