@@ -11,17 +11,14 @@ class SuperbaseAPI:
     SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
 
     def __init__(self) -> None:
-        self.supabase: Client = None
+        if self.SUPABASE_URL != None and self.SUPABASE_KEY != None:
+            self.supabase: Client = create_client(
+                self.SUPABASE_URL, self.SUPABASE_KEY
+            )
 
-    def create_client(self):
-        if self.supabase is None:
-            self.supabase = create_client(self.SUPABASE_URL,self.SUPABASE_KEY)
-            
 
     def featured(self) -> list[Featured]:
 
-        if self.supabase is None:
-            self.create_client()
 
         response = self.supabase.table("featuared").select("*").order("init_date",desc=True).limit(2).execute()
 

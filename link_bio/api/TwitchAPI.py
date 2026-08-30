@@ -1,5 +1,5 @@
 import os
-import dotenv 
+import dotenv
 import requests
 import time
 from model.Live import Live
@@ -9,12 +9,10 @@ class TwitchAPI:
 
     dotenv.load_dotenv()
 
-
     CLIENT_ID = os.environ.get("TWITCH_CLIENT_ID")
     CLIENT_SECRET = os.environ.get("TWITCH_CLIENT_SECRET")
 
-
-    def __init__(self):
+    def __init__(self) -> None:
         self.token = None
         self.token_exp = 0
 
@@ -48,27 +46,13 @@ class TwitchAPI:
         response = requests.get(
             f"https://api.twitch.tv/helix/streams?user_login={user}",
             headers={
-                "Client-ID":self.CLIENT_ID,
+                "Client-ID": self.CLIENT_ID,
                 "Authorization": f"Bearer {self.token}"
             }
         )
-        # se añadio este token por que el no sirve del todo
-        if response.status_code == 401:
-            self.generate_token()
-            response = requests.get(
-                f"https://api.twitch.tv/helix/streams?user_login={user}",
-                headers={
-                    "Client-ID": self.CLIENT_ID,
-                    "Authorization": f"Bearer {self.token}"
-                }
-            )
-
-        print(f"Estado de la API de Twitch para {user}:", response.status_code)
-        print("Respuesta completa de Twitch:", response.text)
 
         if response.status_code == 200 and response.json()["data"]:
             data = response.json()["data"]
-            print(data)
-            return Live(live=True,title=data[0]["title"])
+            return Live(live=True, title=data[0]["title"])
 
-        return Live(live=False,title="")       
+        return Live(live=False, title="")
