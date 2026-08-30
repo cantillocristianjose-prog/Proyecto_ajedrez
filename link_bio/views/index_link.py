@@ -4,8 +4,10 @@ from routers import Route
 from styles.styles import Size,Spacing
 from components.link_button import link_button
 from components.title import title
+from components.featured_link import featured_link
+from model.Featured import Featured
 
-def index_link(featured = []) -> rx.Component:
+def index_link(featured: list[Featured]) -> rx.Component:
     return rx.vstack(
         title("Redes sociales"),
         link_button("Instragram",
@@ -21,27 +23,16 @@ def index_link(featured = []) -> rx.Component:
                     "/icons/twitch-brands-solid-full.svg",
                     constants.TWITCH_URL),
 
-        # rx.cond(
-        #     len(featured) > 0,
-        #     rx.vstack(
-        #         title("Destacada"),
-        #         rx.foreach(
-        #             featured,
-        #             lambda item: rx.grid(
-        #                 rx.link(
-        #                     rx.image(
-        #                         src=item["image"]
-        #                     ),
-        #                     rx.text(
-        #                         item["title"]
-        #                     ),
-        #                     href=item["url"],
-        #                     is_external=True
-        #                 )
-        #             )
-        #         )
-        #     )
-        # ),
+        rx.cond(
+            featured,
+            rx.vstack(
+                title("Destacada"),
+                rx.foreach(
+                    featured,
+                    featured_link
+                )
+            )
+        ),
         title("Canales"),
         link_button("Youtube",
                     "Videos para pasar el rato",

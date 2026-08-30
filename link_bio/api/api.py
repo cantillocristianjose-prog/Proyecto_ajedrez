@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from .TwitchAPI import TwitchAPI
 from .SuperbaseAPI import SuperbaseAPI
 from model.Live import Live
+from model.Featured import Featured
 
 TWITCH_API = TwitchAPI()
 SUPABASE_API = SuperbaseAPI()
@@ -17,5 +18,5 @@ async def repo() -> str:
 async def live(user: str) -> Live:
     return TWITCH_API.live(user)
 
-async def featured() -> list:
+async def featured() -> list[Featured]:
     return SUPABASE_API.featured()
