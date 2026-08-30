@@ -8,7 +8,7 @@ class PageState(rx.State):
     featured_info: list
 
     async def check_live(self):
-        self.live_status = await live("theobsidianboy")
+        self.live_status = await live("antonicratv")
         
 
     async def featured_links(self):
