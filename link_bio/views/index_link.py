@@ -27,9 +27,13 @@ def index_link(featured: list[Featured]) -> rx.Component:
             featured,
             rx.vstack(
                 title("Destacada"),
-                rx.foreach(
-                    featured,
-                    featured_link
+                rx.grid(
+                    rx.foreach(
+                        featured,
+                        featured_link
+                    ),
+                    columns={"initial": "1", "sm": "2"},
+                    spacing=Spacing.DEFAULT.value
                 )
             )
         ),

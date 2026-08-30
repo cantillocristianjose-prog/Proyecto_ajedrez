@@ -1,5 +1,5 @@
 import reflex as rx
-from api.api import live,featured
+from api.api import live,featured,schedule
 from model.Live import Live
 from model.Featured import Featured
 
@@ -10,7 +10,8 @@ class PageState(rx.State):
 
     async def check_live(self):
         self.live_status = await live("theobsidianboy")
-        
+        if not self.live_status.live:
+             await schedule()
 
     async def featured_links(self):
         self.featured_info = await featured()

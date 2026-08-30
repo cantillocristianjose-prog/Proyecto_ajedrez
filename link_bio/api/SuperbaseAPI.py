@@ -23,7 +23,7 @@ class SuperbaseAPI:
         if self.supabase is None:
             self.create_client()
 
-        response = self.supabase.table("featuared").select("*").execute()
+        response = self.supabase.table("featuared").select("*").order("init_date",desc=True).limit(2).execute()
 
         featured_data = []
 

@@ -2,11 +2,13 @@ import views.constants as const
 from fastapi import FastAPI
 from .TwitchAPI import TwitchAPI
 from .SuperbaseAPI import SuperbaseAPI
+from .ConfigCatAPI import ConfigCatAPI
 from model.Live import Live
 from model.Featured import Featured
 
 TWITCH_API = TwitchAPI()
 SUPABASE_API = SuperbaseAPI()
+CONFIGCATAPI = ConfigCatAPI()
 
 API_hello = FastAPI()
 
@@ -20,3 +22,6 @@ async def live(user: str) -> Live:
 
 async def featured() -> list[Featured]:
     return SUPABASE_API.featured()
+
+async def schedule():
+    print(ConfigCatAPI.schedule())
