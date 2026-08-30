@@ -2,6 +2,7 @@ import os
 import dotenv 
 import requests
 import time
+from model.Live import Live
 
 
 class TwitchAPI:
@@ -39,7 +40,7 @@ class TwitchAPI:
     def token_valid(self) -> bool:
         return time.time() < self.token_exp
 
-    def live(self, user: str) -> dict:
+    def live(self, user: str) -> Live:
 
         if not self.token_valid():
             self.generate_token()
@@ -68,6 +69,6 @@ class TwitchAPI:
         if response.status_code == 200 and response.json()["data"]:
             data = response.json()["data"]
             print(data)
-            return {"live":True,"titulo":data[0]["title"]}
+            return Live(live=True,title=data[0]["title"])
 
-        return {"live":False,"titulo":""}        
+        return Live(live=False,title="")       

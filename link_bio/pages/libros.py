@@ -27,8 +27,7 @@ def libros() -> rx.Component:
             rx.vstack(
                 header(
                     False,
-                    PageState.is_live,
-                    PageState.live_title
+                    PageState.live_status
                 ),
                 libros_link(),
                 max_width=styles.MAX_WIDTH,
