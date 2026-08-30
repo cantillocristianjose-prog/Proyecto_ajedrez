@@ -24,4 +24,4 @@ async def featured() -> list[Featured]:
     return SUPABASE_API.featured()
 
 async def schedule():
-    print(ConfigCatAPI.schedule())
+    print(CONFIGCATAPI.schedule())
