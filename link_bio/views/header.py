@@ -92,7 +92,7 @@ def header(details = True, live_status: Live = Live(live=False,title= ""), next_
                         const.TWITCH_URL
                     ),
                     rx.cond(
-                        True,
+                        next_live,
                         link_button(
                             "Proximo directo",
                             next_live,
