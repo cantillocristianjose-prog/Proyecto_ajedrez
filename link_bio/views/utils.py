@@ -66,6 +66,6 @@ def next_date(dates: dict) -> str:
 
             formatted_next_time = time_utc.strftime("%H:%M")
 
-            return f"{day} - {formatted_next_date} a las {formatted_next_time}"
+            return f"{formatted_next_date} a las {formatted_next_time}"
 
     return ""
