@@ -39,7 +39,7 @@ videos_meta.extend(_meta)
 #Date
 
 def next_date(dates: dict) -> str:
-    
+
     if len(dates) == 0:
         return ""
 
@@ -54,7 +54,7 @@ def next_date(dates: dict) -> str:
         if day not in dates or dates[day] == "":
             continue
 
-        time_utc = datetime.strptime(dates[day], "%H:%M").replace(tzinfo=timezone.utc)
+        time_utc = datetime.strptime(dates[day], "%H:%M").time().replace(tzinfo=timezone.utc)
 
         time = datetime.combine(now.date(),time_utc).astimezone().timetz()
 
