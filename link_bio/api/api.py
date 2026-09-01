@@ -23,5 +23,5 @@ async def live(user: str) -> Live:
 async def featured() -> list[Featured]:
     return SUPABASE_API.featured()
 
-async def schedule():
-    print(CONFIGCATAPI.schedule())
+async def schedule() -> dict:
+    return CONFIGCATAPI.schedule()

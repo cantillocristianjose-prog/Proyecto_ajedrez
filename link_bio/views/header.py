@@ -12,7 +12,7 @@ from styles.styles import Size,Spacing
 from model.Live import Live
 años_actual = datetime.date.today().year
 
-def header(details = True, live_status: Live = Live(live=False,title= "")) -> rx.Component:
+def header(details = True, live_status: Live = Live(live=False,title= ""), next_live= "") -> rx.Component:
     return rx.vstack(
         rx.hstack(
             rx.avatar(
@@ -90,6 +90,15 @@ def header(details = True, live_status: Live = Live(live=False,title= "")) -> rx
                         live_status.title,
                         "/icons/twitch-brands-solid-full.svg",
                         const.TWITCH_URL
+                    ),
+                    rx.cond(
+                        True,
+                        link_button(
+                            "Proximo directo",
+                            next_live,
+                            "/icons/twitch-brands-solid-full.svg",
+                            const.TWITCH_URL
+                        ),
                     )
                 ),
                 rx.text(

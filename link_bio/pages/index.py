@@ -28,7 +28,8 @@ def index() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(
-                    live_status=PageState.live_status
+                    live_status=PageState.live_status,
+                    next_live=PageState.next_live
                 ),
                 index_link(PageState.featured_info),
                 max_width=styles.MAX_WIDTH,
