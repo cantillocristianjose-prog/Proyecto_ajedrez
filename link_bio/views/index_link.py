@@ -1,11 +1,13 @@
 import reflex as rx
 import views.constants as constants
+import styles.styles as styles
 from routers import Route
 from styles.styles import Size,Spacing
 from components.link_button import link_button
 from components.title import title
 from components.featured_link import featured_link
 from model.Featured import Featured
+from state.PageState import PageState
 
 def index_link(featured: list[Featured]) -> rx.Component:
     return rx.vstack(
@@ -33,7 +35,8 @@ def index_link(featured: list[Featured]) -> rx.Component:
                         featured_link
                     ),
                     columns={"initial": "1", "sm": "2"},
-                    spacing=Spacing.DEFAULT.value
+                    spacing=Spacing.DEFAULT.value,
+                    class_name=styles.FADEIN_ANIMATION
                 )
             )
         ),
@@ -53,5 +56,6 @@ def index_link(featured: list[Featured]) -> rx.Component:
             Route.LIBROS.value,
             is_external=False
         ),
-        width="100%"
+        width="100%",
+        spacing=Spacing.DEFAULT.value,
     )

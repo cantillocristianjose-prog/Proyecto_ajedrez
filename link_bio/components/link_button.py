@@ -2,7 +2,7 @@ import reflex as rx
 import styles.styles as styles
 from styles.styles import Size,Spacing
 
-def link_button(title:str,body: str, image: str ,url:str,is_external=True) -> rx.Component:
+def link_button(title:str,body: str, image: str ,url:str,is_external=True,animated=False) -> rx.Component:
     return rx.link(
         rx.button(
             rx.hstack(
@@ -27,5 +27,6 @@ def link_button(title:str,body: str, image: str ,url:str,is_external=True) -> rx
         ),
         href=url,
         is_external=is_external,
+        class_name=styles.TADA_ANIMATION if animated else None,
         width="100%"
     )

@@ -5,6 +5,8 @@ from styles.colors import TextColor
 from enum import Enum
 #Constantes
 MAX_WIDTH = "600px"
+FADEIN_ANIMATION = "animate__animated animate__fadeIn"
+TADA_ANIMATION = "animate__animated animate__tada"
 
 #Spacings
 class Size(Enum):
@@ -31,8 +33,11 @@ STYLESHEETS = [
     "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap",
     "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap",
     "https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap",
+    "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css", #link de esta aplicacion https://animate.style
     "/css/styles.css"
 ]
+
+
 
 BASE_STYLE = {
     "font_family": Font.DEFAULT.value,

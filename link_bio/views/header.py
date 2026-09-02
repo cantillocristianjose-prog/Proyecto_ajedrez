@@ -10,6 +10,7 @@ from components.link_button import link_button
 from components.info_text import info_text
 from styles.styles import Size,Spacing
 from model.Live import Live
+from state.PageState import PageState
 años_actual = datetime.date.today().year
 
 def header(details = True, live_status: Live = Live(live=False,title= ""), next_live= "") -> rx.Component:
@@ -89,7 +90,8 @@ def header(details = True, live_status: Live = Live(live=False,title= ""), next_
                         "En vivo",
                         live_status.title,
                         "/icons/twitch-brands-solid-full.svg",
-                        const.TWITCH_URL
+                        const.TWITCH_URL,
+                        animated=True
                     ),
                     rx.cond(
                         next_live,
@@ -97,9 +99,10 @@ def header(details = True, live_status: Live = Live(live=False,title= ""), next_
                             "Proximo directo",
                             next_live,
                             "/icons/twitch-brands-solid-full.svg",
-                            const.TWITCH_URL
+                            const.TWITCH_URL,
+                            animated=True
                         ),
-                    )
+                    ),
                 ),
                 rx.text(
                         """Bienvenido a mi canal! soy TheObsidianBoy, 
