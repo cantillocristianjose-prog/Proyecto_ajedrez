@@ -3,13 +3,12 @@ import reflex as rx
 config = rx.Config(
     app_name="link_bio",
     cors_allowed_origins=[
-        "https://link-bio-navy-ring.reflex.run/",
-        "http://localhost:3000",
-        "http://localhost:8000"
+        "https://link-bio-navy-ring.reflex.run",
+        "http://localhost:3000"
     ],
     plugins=[
         rx.plugins.SitemapPlugin(),
         rx.plugins.TailwindV4Plugin(),
     ],
-    api_url="https://api-de-la-web.up.railway.app/"
+    api_url="https://api-de-la-web.up.railway.app"
 )
