@@ -3,7 +3,7 @@ import reflex as rx
 config = rx.Config(
     app_name="link_bio",
     cors_allowed_origins=[
-        "https://link-bio-navy-ring.reflex.run",
+        "https://link-bio-navy-ring.reflex.run/",
         "http://localhost:3000",
         "http://localhost:8000"
     ],
