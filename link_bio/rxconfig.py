@@ -4,7 +4,7 @@ config = rx.Config(
     app_name="link_bio",
     cors_allowed_origins=[
         "http://localhost:3000",
-        "https://link-bio-navy-ring.reflex.run"
+        "https://link-bio-gold-orca.reflex.run"
     ],
     plugins=[
         rx.plugins.SitemapPlugin(),
