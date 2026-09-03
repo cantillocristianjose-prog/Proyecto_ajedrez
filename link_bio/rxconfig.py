@@ -4,11 +4,11 @@ config = rx.Config(
     app_name="link_bio",
     cors_allowed_origins=[
         "http://localhost:3000",
-        "https://link-bio-navy-ring.reflex.run",
+        "https://link-bio-navy-ring.reflex.run"
     ],
     plugins=[
         rx.plugins.SitemapPlugin(),
         rx.plugins.TailwindV4Plugin(),
     ],
-    api_url="https://api-de-la-web.up.railway.app"
+    api_url="https://apithe.up.railway.app"
 )
