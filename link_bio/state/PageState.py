@@ -11,7 +11,7 @@ class PageState(rx.State):
     featured_info: list[Featured]
 
     async def check_live(self):
-        self.live_status = Live(live=True, title="sebastian este es tu directo no directo") #  await live("theobsidianboy")
+        self.live_status = await live("theobsidianboy")
         if not self.live_status.live:
             self.next_live = utils.next_date(await schedule())
 
